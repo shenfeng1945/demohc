@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>转动的骰子</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    .section {
+        margin-top: 140px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 150px;
+        min-height: 200px;
+    }
+    .container {
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform .2s
+    }
+    .container .front {
+        border: 1px solid;
+        width: 150px;
+        height: 150px;
+        transform: translateZ(75px);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        background: red;
+    }
+    .container .back {
+        border: 1px solid;
+        width: 150px;
+        height: 150px;
+        transform: translateZ(-75px);
+
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        background: orange;
+    }
+    .container .left {
+        border: 1px solid;
+        width: 150px;
+        height: 150px;
+        transform: rotateY(-90deg) translateZ(75px);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        background: yellow;
+    }
+    .container .right {
+        border: 1px solid;
+        width: 150px;
+        height: 150px;
+        transform: rotateY(90deg) translateZ(75px);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        background: green;
+    }
+    .container .top {
+        border: 1px solid;
+        width: 150px;
+        height: 150px;
+        transform: rotateX(90deg) translateZ(75px);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        background: blue;
+    }
+    .container .bottom {
+        border: 1px solid;
+        width: 150px;
+        height: 150px;
+        transform: rotateX(-90deg) translateZ(75px);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        background: purple;
+    }
+</style>
+<body>
+<div class=section>
+    <div class="container">
+        <div class="front">1</div>
+        <div class="back">6</div>
+        <div class="left">2</div>
+        <div class="right">5</div>
+        <div class="top">3</div>
+        <div class="bottom">4</div>
+    </div>
+</div>
+<script>
+    let degreeX = 0
+    let degreeY = 0
+    let degreeZ = 0
+    setInterval(function() {
+        let div = document.querySelector('.container')
+        div.style.transform = 'rotateX(' + degreeX + 'deg) rotateY(' + degreeY + 'deg) rotateZ(' + degreeZ + 'deg)'
+        degreeX += 4
+        degreeY += 5
+        degreeZ += 6
+    }, 80)
+</script>
+</body>
+</html>
