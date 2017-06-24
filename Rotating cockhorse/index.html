@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    @-webkit-keyframes t{
+        from {
+            -webkit-transform: rotateY(0deg);
+        }
+        to {
+            -webkit-transform: rotateY(-360deg);
+        }
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+    body{
+        margin-top: 30px;
+        margin-left: 200px;
+    }
+    .section {
+        width: 100px;
+        height: 80px;
+        perspective: 1000px;
+        position: relative;
+
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform-style: preserve-3d;
+        -webkit-animation-name: t;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-duration: 36s;
+    }
+    .container div {
+        width: 90px;
+        height: 80px;
+        border: 1px solid;
+        position: absolute;
+    }
+    .one {
+        transform: translateZ(137.37px);
+    }
+    .two {
+        transform: rotateY(40deg) translateZ(137.37px);
+    }
+    .three {
+        transform: rotateY(80deg) translateZ(137.37px);
+    }
+    .four {
+        transform: rotateY(120deg) translateZ(137.37px);
+    }
+    .five {
+        transform: rotateY(160deg) translateZ(137.37px);
+    }
+    .six {
+        transform: rotateY(200deg) translateZ(137.37px);
+    }
+    .seven {
+        transform: rotateY(240deg) translateZ(137.37px);
+    }
+    .eight {
+        transform: rotateY(280deg) translateZ(137.37px);
+    }
+    .nine {
+        transform: rotateY(320deg) translateZ(137.37px);
+    }
+</style>
+<body>
+<div class=section>
+    <div class="container">
+        <div class=one>1</div>
+        <div class=two>2</div>
+        <div class=three>3</div>
+        <div class=four>4</div>
+        <div class=five>5</div>
+        <div class=six>6</div>
+        <div class=seven>7</div>
+        <div class=eight>8</div>
+        <div class=nine>9</div>
+    </div>
+</div>
+</body>
+</html>
